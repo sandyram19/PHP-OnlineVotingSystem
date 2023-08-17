@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="index.css">
+  <title>Online Voting System</title>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="call" id="licon"></ion-icon>
+                        <input  id="phone" type="number" pattern="[0-9]{10}" required>
+                        <label for="">Phone Number</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" required>
+                        <label for="">Password</label>
+                    </div>
+
+                    <!-- Dropdown menu -->
+                    <div class="inputbox dropdown">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                        <select id="dropdown-select">
+                            
+                            <option value="voter">Voter</option>
+                            <option value="candidate">Candidate</option>
+                            
+                        </select>
+                        <label for="dropdown-select"></label>
+                    </div>
+                    
+                    <button>Log in</button>
+                    <div class="register">
+                        <p>Don't have a account <br> <a href="register.html">Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>
