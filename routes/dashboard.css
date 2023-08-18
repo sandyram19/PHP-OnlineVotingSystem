@@ -1,0 +1,150 @@
+body{
+    font-family: 'Montserrat'; 
+    font-weight: 500;
+  }
+  #title{
+    background-color: #0079FF;
+    color: #fff;
+  }
+  
+  .container-fluid{
+    padding: 3% 15%;
+  }
+  .navbar{
+    margin-bottom: 5%;
+  }
+  .navbar-brand{
+    font-family: 'Ubuntu';
+    font-size: 1.5rem;
+    
+  }
+  #products{
+    padding: 3% 15%;
+  }
+  
+  h1 {  
+    font-family: 'Montserrat'; 
+    /* color: white; */
+    font-size: 3.5rem;  
+    line-height: 1.5;  
+    font-weight: 900; 
+  }
+  
+  @media (max-width: 920px) {
+    #title{
+      text-align: center;
+    }
+    
+  }
+  
+  h2{
+    font-family: 'Montserrat'; 
+    font-size: 3rem;  
+    /* line-height: 1.5;   */
+    font-weight: 700; 
+  }
+  
+  h3,h5{
+    font-family: 'Montserrat'; 
+    font-size: 1.5rem;  
+    /* line-height: 1.5;   */
+    font-weight: 700; 
+  }
+  p{
+    color: #252121;
+  }
+  
+  #features{
+  padding: 7% 15%;
+  }
+  
+  .feature-box{
+    text-align: center;
+    padding: 5%;
+  }
+  
+  .icon{
+    color: #62CDFF;
+    margin-bottom: 1rem;
+  }
+  
+  .icon:hover{
+    color: #0079FF;
+  }
+  .certificate-img{
+    max-width: 100%;
+  }
+  #testimonials{
+    text-align: center;
+    background-color: #62CDFF;
+    color: #fff;
+  }
+  
+  .testimonial-image{
+  max-width: 100%;
+  border-radius:10px;
+  height: auto;
+  transition: 0.3s;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .testimonial-image:hover{
+    transform: scale(1.051);
+    z-index:2;
+  }
+  
+  .carousel-item{
+    padding: 7% 15%;
+    max-height: 2500px;
+  }
+  /* .carousel-inner{
+    
+  } */
+  .card{
+   
+    padding: 0%;
+    margin: 2%;
+  }
+  .card:hover{
+    transform: scale(1.1);
+    z-index:2;
+  }
+  #products{
+  color: #1D267D;
+  }
+  
+  .prod-column{
+  padding: 3% 2%;
+  /* text-align: center; */
+  }
+  
+  #img1{
+    border-radius:10px;
+    
+    max-width: 100%;
+    max-height: auto;
+   
+    
+    transition: 0.3s;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  #img1:hover{
+    transform: scale(1.051);
+    z-index:2;
+  }
+  
+  .btn{
+    margin:0 10px 0 0;
+  }
+  
+  .contact{
+    margin:5% 3% 5% 0;
+  }
+  
+  #footer{
+    padding: 7% 15% ;
+    background-color: #2F58CD;
+    text-align: center;
+    color: #fff;
+  }

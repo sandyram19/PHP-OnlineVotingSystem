@@ -8,7 +8,7 @@
     <section>
         <div class="form-box" style="height: 650px;">
             <div class="form-value">
-                <form action="">
+                <form action="../api/register.php" method="POST" enctype="multipart/form-data">
                     <h2>Register</h2>
                     <div class="input-row">
                         <div class="inputbox">
@@ -18,7 +18,7 @@
                         </div>
                         <div class="inputbox">
                             <ion-icon name="call" id="licon"></ion-icon>
-                            <input id="phone" name="number" type="number" pattern="[0-9]{10}" required>
+                            <input id="phone" name="phone" type="number" pattern="[0-9]{10}" required>
                             <label for="">Phone Number</label>
                         </div>
                     </div>
@@ -48,8 +48,8 @@
                             <ion-icon name="chevron-down-outline"></ion-icon>
                             <select id="dropdown-select" name="role">
                                 
-                                <option value="voter">Voter</option>
-                                <option value="candidate">Candidate</option>
+                                <option value="1">Voter</option>
+                                <option value="2">Candidate</option>
                                 
                             </select>
                             <label for="dropdown-select"></label>
