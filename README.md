@@ -9,5 +9,10 @@
 ### Register
 ![Register!](https://user-images.githubusercontent.com/88817285/261674674-aa5935db-2ccd-419b-8d82-108122498684.png)
 ### Dashboard
-![Dashboard!](https://user-images.githubusercontent.com/88817285/261675270-483d2da7-4450-48ec-82ef-2a178f5b3cab.png)
+
+## Sample Before Voting
+![Before Voting](https://user-images.githubusercontent.com/88817285/261678519-77ed0821-2e3b-45f6-b285-d51f64c2f571.png)
+
+## After Voting
+![Dashboard!](https://user-images.githubusercontent.com/88817285/261679426-5bc2f42d-31eb-4c8e-92fa-525b0019d492.png)
 
