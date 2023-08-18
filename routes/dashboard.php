@@ -3,6 +3,17 @@ session_start();
 if(!isset($_SESSION['userdata'])){
   header("location: ../");
 }
+$userdata=$_SESSION['userdata'];
+$groupsdata=$_SESSION['groupsdata'];
+
+if($_SESSION['userdata']['status']==0){
+  $btnstatus="btn-danger";
+  $status="Not Voted";
+}
+else{
+  $btnstatus="btn-success";
+  $status="Voted";
+}
 ?>
 
 <html>
@@ -33,39 +44,91 @@ if(!isset($_SESSION['userdata'])){
 
 <body>
 
-  <section id="title">
-  <div class="container-fluid">
-
-    
-
-    <!-- Nav Bar -->
-    <nav class="navbar navbar-dark">
-    <button type="button" class="contact btn btn-lg btn-dark"><ion-icon name="arrow-back-outline"></ion-icon> Back</button>
-    <a class="navbar-brand" href="#">Online Voting System</a>
-    <button type="button" class="contact btn btn-lg btn-dark"><ion-icon name="log-out-outline"></ion-icon> Logout</button>
-    </nav>
+<section id="title">
+    <div class="container-fluid">
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-dark">
+      <a href="../"><button type="button" class="contact btn btn-lg btn-dark"> <ion-icon name="arrow-back-outline"></ion-icon> Back </button></a>
+        <a class="navbar-brand" href="#">Online Voting System</a>
+        <a href="logout.php"><button type="button" class="contact btn btn-lg btn-dark"><ion-icon name="log-out-outline"></ion-icon> Logout </button></a>
+      </nav>
       
-  
+      <!-- Title -->
+      <div class="row mainSection">
+        <div class="col-lg-4">
+          <!-- Profile Card -->
+          <div class="card text-dark bg-light mb-3" style="max-width: 18rem; border-radius: 3%; height: 500px;">
+              <div class="card-header">
+                  <center>
+                  <img src="../uploads/<?php echo $userdata['photo'] ?>" alt="" height="200" width="200" style="border-radius: 5%;">
+                  <center>
+              </div>
 
+              <div class="card-body">
+                <h5 class="card-title"> <?php echo $userdata['name'] ?></h5>
+                <p class="card-text"><ion-icon name="call-sharp"></ion-icon>  <?php echo $userdata['mobile'] ?><br><ion-icon name="home-outline"></ion-icon>  <?php echo $userdata['address'] ?></p>
+                <center><button class="btn btn-lg <?php echo $btnstatus ?>"><?php echo $status ?></button></center>
+              </div>
+          </div>
+        </div>
 
+        <div class="col-lg-8">
+          <!-- Group Content -->
+          <div class="card border-dark mb-3" style="max-width: 60rem; height: 90%;">
+            
+            <div class="card-body text-dark">
+              
+                <?php 
+                  if($_SESSION['groupsdata']){
+                    for($i=0;$i<count($groupsdata);$i++){
+                  ?>
 
+                  <div class="row justify-content-between">
+                    <div class="col-lg-6">
+                        <b>Candidate Name: <?php echo $groupsdata[$i]['name'] ?> </b><br>
+                        <b>Votes: <?php echo $groupsdata[$i]['votes'] ?> </b><br>
+                        <form action="../api/vote.php" method="POST">
+                          <input type="hidden" name="gvotes" value="<?php echo $groupsdata[$i]['votes']?>">
+                          <input type="hidden" name="gid" value="<?php echo $groupsdata[$i]['id']  ?>">
 
-    <!-- Title -->
+                          <?php
+                            if($_SESSION['userdata']['status']==0){
+                              ?>
+                          <button class="btn btn-lg btn-warning w-20" name="votebtn" id="votebtn" type="submit"> Vote </button>
+                          
+                          <?php
+                          }else{
+                            ?>
+                            <button disabled class="btn btn-lg btn-success w-20" name="votebtn" id="votebtn" type="button"> Voted </button>
+                          
+                          
+                          <?php } ?>
+                          </form>
+                    </div>
+                    
+                    <div class="col-lg-2 mr-5">
+                        <img src="../uploads/<?php echo $groupsdata[$i]['photo'] ?>" alt="" height="100" width="100" >
+                    </div>
+                  </div>
+                  <hr>
 
-    <div class="row">
-      <div class="col-lg-6">
-        <h1 id="title">The right to vote is the gift of democracy</h1>
+                  <?php
+                       
+                    }
+                  }else{
+                    echo "No Candidates so far";
+
+                  }
+                ?>
+                <!-- <h5 class="card-title">Dark card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            </div>
+          </div>
+        </div>
       </div>
-   
-      <div class="col-lg-6">
-        <img id="img1" src="../dashboard.webp" alt="sample img">
-      </div>
-    </div>
-   
 
+      
     </div>
-  </div>
-
   </section>
 
  
@@ -83,3 +146,5 @@ if(!isset($_SESSION['userdata'])){
 </body>
 
 </html>
+
+         
